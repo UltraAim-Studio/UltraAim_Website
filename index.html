@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="images/Ultra Aim Pvt Logo.png">
+    <meta charset="UTF-8">
+    <title>UltraAim Private Limited - Game & Software Development</title>
+    <meta name="description" content="UltraAim Private Limited is an independent game and app development studio based in India.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(15, 15, 30, 0.95);
+            padding: 15px 0;
+            border-bottom: 2px solid #ff006e;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: auto;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e4e4e5;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 50px;
+            vertical-align: middle;
+        }
+
+        .logo-text .highlight {
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            padding: 25px 20px;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            color: #ff006e;
+            background: rgba(255, 0, 110, 0.1);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #ff006e;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(255, 0, 110, 0.1) 0%, rgba(0, 200, 255, 0.1) 100%);
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0 0 30px rgba(255, 0, 110, 0.3);
+        }
+
+        .hero .subtitle {
+            font-size: 20px;
+            color: #00c8ff;
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #b0b0b0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 40px;
+            margin-bottom: 40px;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff006e, #00c8ff);
+            margin: 20px auto 0;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .about-content p {
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #c0c0c0;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 0, 110, 0.3);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            background: rgba(255, 0, 110, 0.1);
+            border-color: #ff006e;
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: #ff006e;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .service-card p {
+            color: #a0a0a0;
+            font-size: 14px;
+        }
+
+        /* Games Section */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .game-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 0, 110, 0.2);
+            transition: all 0.4s;
+            cursor: pointer;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            border-color: #ff006e;
+            box-shadow: 0 20px 40px rgba(255, 0, 110, 0.2);
+        }
+
+        .game-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .game-card-content {
+            padding: 25px;
+        }
+
+        .game-card h3 {
+            color: #00c8ff;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .game-card .status {
+            display: inline-block;
+            background: rgba(255, 0, 110, 0.3);
+            color: #ff006e;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .game-card p {
+            color: #a0a0a0;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .game-card .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff006e, #d4006e);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        .game-card .cta-btn:hover {
+            background: linear-gradient(135deg, #d4006e, #a80052);
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact-info {
+            background: rgba(255, 0, 110, 0.08);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-info p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info a {
+            color: #00c8ff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: #ff006e;
+        }
+
+        /* Social Media Icons */
+        .social-links {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ff006e, #d4006e);
+            color: #fff;
+            border-radius: 50%;
+            font-size: 20px;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(255, 0, 110, 0.3);
+            color: #fff;
+        }
+
+        /* Info Section */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .info-box {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 4px solid #ff006e;
+            border-radius: 5px;
+        }
+
+        .info-box h3 {
+            color: #ff006e;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .info-box p {
+            color: #a0a0a0;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(15, 15, 30, 0.98);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 0, 110, 0.3);
+            color: #666;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Modal Popup Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-content {
+            background: #1a1a2e;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #ff006e;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ff006e;
+            padding-bottom: 15px;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            color: #fff;
+            font-size: 28px;
+        }
+
+        .close-btn {
+            color: #ff006e;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: #d4006e;
+        }
+
+        .modal-body {
+            color: #c0c0c0;
+            line-height: 1.8;
+        }
+
+        .modal-body h3 {
+            color: #00c8ff;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .modal-body p {
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        /* Game Modal */
+        .game-modal-content {
+            max-width: 800px;
+        }
+
+        .game-modal-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .game-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 20px;
+        }
+
+        .game-modal-header h2 {
+            margin: 0;
+            color: #fff;
+        }
+
+        /* Hero Logo */
+        .hero-logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 30px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero .subtitle {
+                font-size: 16px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header .container {
+                flex-direction: row;
+                gap: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: rgba(15, 15, 30, 0.98);
+                border-bottom: 2px solid #ff006e;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                padding: 15px 20px;
+                margin-left: 0;
+                border-bottom: 1px solid rgba(255, 0, 110, 0.2);
+            }
+
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+
+            .modal-content {
+                width: 95%;
+                max-height: 90vh;
+                padding: 20px;
+            }
+
+            .modal-header {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+
+            .close-btn {
+                align-self: flex-end;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="container">
+        <div class="logo">
+            <img src="images/Ultra Aim Pvt Logo V2.png" alt="UltraAim Logo">
+            <span class="logo-text"><span class="highlight">U</span>ltra<span class="highlight">A</span>im</span>
+        </div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#games">Games</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <img src="images/Ultra Aim Pvt Logo V3.png" alt="UltraAim Logo" class="hero-logo">
+        <h1>UltraAim Private Limited</h1>
+        <p class="subtitle">Crafting Engaging Digital Experiences</p>
+        <p>An independent game and software development studio creating innovative solutions for a global audience. Based in India, delivering world-class products.</p>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about">
+    <div class="container">
+        <h2>About Us</h2>
+        <div class="about-grid">
+            <div class="about-content">
+                <p>
+                    UltraAim Private Limited is an India-based company engaged in the design, development, and publishing of mobile applications and games.
+                </p>
+                <p>
+                    We combine creativity with technical expertise to deliver high-quality interactive experiences. Our team is passionate about game development and software innovation.
+                </p>
+                <p>
+                    We undertake custom software development and client-based projects when required, tailoring solutions to meet unique business needs.
+                </p>
+            </div>
+            <div class="about-content">
+                <h3 style="color: #ff006e; margin-bottom: 20px;">Our Mission</h3>
+                <p>
+                    To create memorable gaming and software experiences that engage users worldwide, while maintaining the highest standards of quality and innovation.
+                </p>
+                <p style="margin-top: 30px;">
+                    <strong style="color: #00c8ff;">We Value:</strong>
+                </p>
+                <p>• Creativity & Innovation<br>• Quality & Excellence<br>• User Experience<br>• Technical Expertise</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+    <div class="container">
+        <h2>What We Do</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>🎮 Mobile Games</h3>
+                <p>Engaging games for Android & iOS platforms with captivating gameplay and stunning visuals.</p>
+            </div>
+            <div class="service-card">
+                <h3>📱 Mobile Apps</h3>
+                <p>User-friendly applications designed to solve real-world problems and enhance daily experiences.</p>
+            </div>
+            <div class="service-card">
+                <h3>⚙️ Software Solutions</h3>
+                <p>Interactive and robust software solutions tailored to your business requirements.</p>
+            </div>
+            <div class="service-card">
+                <h3>🤝 Custom Development</h3>
+                <p>Specialized project development services for clients with unique and complex needs.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Upcoming Games Section -->
+<section id="games">
+    <div class="container">
+        <h2>Upcoming Games</h2>
+        <div class="games-grid">
+            <!-- Game Card 1 -->
+            <div class="game-card">
+                <img src="images/Game Banners/Soil to Sky Game Banner.jpg" alt="Soil to Sky">
+                <div class="game-card-content">
+                    <h3>Soil to Skyline</h3>
+                    <span class="status">Coming Soon</span>
+                    <p>
+                        Embark on an epic journey from the depths of the earth to the heights of the sky. Experience a unique adventure combining puzzle-solving, exploration, and stunning environmental storytelling.
+                    </p>
+                    <a onclick="openGameModal('Soil to Skyline', 'images/Game Banners/Soil to Sky Game Banner.jpg', 'Embark on an epic journey from the depths of the earth to the heights of the sky. Experience a unique adventure combining puzzle-solving, exploration, and stunning environmental storytelling.\n\nThe game features:\n- Immersive puzzle mechanics\n- Beautiful environmental design\n- Engaging storyline\n- Multiple difficulty levels\n- Cross-platform support\n\nJoin us as we bring this unique experience to life!')" class="cta-btn">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Game Card 2 - Template for adding more games -->
+            <div class="game-card">
+                <img src="images/Game Banners/Ludo Ultra 3D Game banner.png" alt="Game Coming Soon">
+                <div class="game-card-content">
+                    <h3>Ludo Ultra 3D</h3>
+                    <span class="status">In Development</span>
+                    <p>
+                        Add your game description here. Describe the unique features, gameplay mechanics, and what makes your game special.
+                    </p>
+                    <a onclick="openGameModal('Ludo Ultra 3D', 'images/Game Banners/Ludo Ultra 3D Game Banner.png', 'Add your detailed game description here.\n\nFeatures:\n- Feature 1\n- Feature 2\n- Feature 3\n\nMore details coming soon!')" class="cta-btn">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Game Card 3 - Template for adding more games -->
+            <div class="game-card">
+                <img src="images/Game Banners/Think Again Game banner.png" alt="Game Coming Soon">
+                <div class="game-card-content">
+                    <h3>Think Again</h3>
+                    <span class="status">In Development</span>
+                    <p>
+                        Add your game description here. Describe the unique features, gameplay mechanics, and what makes your game special.
+                    </p>
+                    <a onclick="openGameModal('Think Again', 'images/Game Banners/Think Again Game banner.png', 'Add your detailed game description here.\n\nFeatures:\n- Feature 1\n- Feature 2\n- Feature 3\n\nMore details coming soon!')" class="cta-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <h2>Get In Touch</h2>
+        <div class="contact-info">
+            <p>
+                <strong>Email:</strong> <a href="mailto:contact@ultraaim.in">contact@ultraaim.in</a>
+            </p>
+            <p>
+                <strong>Location:</strong> India
+            </p>
+            <p style="margin-top: 30px; font-size: 14px; color: #808080;">
+                Interested in our games or have a project in mind? We'd love to hear from you!
+            </p>
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/company/ultraaim/" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.instagram.com/ultraaim_official/" target="_blank" title="Instagram" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com/@UltraAim" target="_blank" title="YouTube" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.facebook.com/UltraAim" target="_blank" title="Facebook" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Legal Section -->
+<section>
+    <div class="container">
+        <div class="info-grid">
+            <div class="info-box">
+                <h3>Privacy Policy</h3>
+                <p>
+                    UltraAim Private Limited respects your privacy. Our applications collect limited data required for functionality and improvement of user experience.
+                </p>
+                <button onclick="openModal('privacyModal')" style="background: #ff006e; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top: 15px; transition: all 0.3s;">
+                    Read Full Policy
+                </button>
+            </div>
+            <div class="info-box">
+                <h3>Terms & Conditions</h3>
+                <p>
+                    By using our applications or services, you agree to comply with applicable laws and regulations. UltraAim Private Limited reserves the right to update these terms.
+                </p>
+                <button onclick="openModal('termsModal')" style="background: #ff006e; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top: 15px; transition: all 0.3s;">
+                    Read Full Terms
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Privacy Policy Modal -->
+<div id="privacyModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Privacy Policy</h2>
+            <span class="close-btn" onclick="closeModal('privacyModal')">&times;</span>
+        </div>
+        <div class="modal-body">
+            <h3>1. Information Collection</h3>
+            <p>
+                UltraAim Private Limited collects limited personal information required for the functionality and improvement of our applications and services. This may include user preferences, app usage data, and device information.
+            </p>
+
+            <h3>2. Data Usage</h3>
+            <p>
+                We use collected data to:
+                <br>• Improve our services and user experience
+                <br>• Provide technical support
+                <br>• Comply with legal obligations
+                <br>• Personalize content and recommendations
+            </p>
+
+            <h3>3. Data Protection</h3>
+            <p>
+                We implement industry-standard security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction.
+            </p>
+
+            <h3>4. Third-Party Sharing</h3>
+            <p>
+                We do not sell or share personal information with third parties, except where required by law or with your explicit consent.
+            </p>
+
+            <h3>5. Cookies</h3>
+            <p>
+                Our applications may use cookies to enhance user experience and track usage patterns. You can control cookie settings through your device preferences.
+            </p>
+
+            <h3>6. User Rights</h3>
+            <p>
+                You have the right to access, modify, or delete your personal information. Please contact us at contact@ultraaim.in for any requests.
+            </p>
+
+            <h3>7. Policy Updates</h3>
+            <p>
+                We reserve the right to update this privacy policy at any time. Changes will be notified through our website and applications.
+            </p>
+
+            <h3>8. Contact Us</h3>
+            <p>
+                For privacy-related inquiries, please contact: <strong>contact@ultraaim.in</strong>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Terms & Conditions Modal -->
+<div id="termsModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Terms & Conditions</h2>
+            <span class="close-btn" onclick="closeModal('termsModal')">&times;</span>
+        </div>
+        <div class="modal-body">
+            <h3>1. Acceptance of Terms</h3>
+            <p>
+                By using our applications, games, or services, you agree to comply with these terms and conditions. If you do not agree with any part of these terms, please discontinue use of our services.
+            </p>
+
+            <h3>2. User Responsibilities</h3>
+            <p>
+                Users are responsible for maintaining the confidentiality of their account information and passwords. You agree to accept responsibility for all activities that occur under your account.
+            </p>
+
+            <h3>3. Intellectual Property Rights</h3>
+            <p>
+                All content, including game assets, code, graphics, and text, are the intellectual property of UltraAim Private Limited. Unauthorized reproduction or distribution is prohibited.
+            </p>
+
+            <h3>4. Limitations of Liability</h3>
+            <p>
+                UltraAim Private Limited is provided "as is" without warranties. We are not liable for any indirect, incidental, or consequential damages arising from the use of our services.
+            </p>
+
+            <h3>5. User Conduct</h3>
+            <p>
+                Users agree not to:
+                <br>• Engage in illegal activities
+                <br>• Harass or threaten other users
+                <br>• Attempt to reverse engineer our applications
+                <br>• Violate any applicable laws or regulations
+            </p>
+
+            <h3>6. Termination</h3>
+            <p>
+                UltraAim Private Limited reserves the right to terminate user accounts or access to services for violations of these terms or illegal activities.
+            </p>
+
+            <h3>7. Modification of Services</h3>
+            <p>
+                We reserve the right to modify or discontinue our services at any time with or without notice. We are not liable for any loss of data or functionality resulting from service modifications.
+            </p>
+
+            <h3>8. Dispute Resolution</h3>
+            <p>
+                Any disputes arising from these terms shall be governed by the laws of India. Both parties agree to resolve disputes through mutual negotiation.
+            </p>
+
+            <h3>9. Contact Information</h3>
+            <p>
+                For inquiries regarding these terms: <strong>contact@ultraaim.in</strong>
+            </p>
+
+            <h3>10. Policy Updates</h3>
+            <p>
+                UltraAim Private Limited reserves the right to update these terms at any time without prior notice. Continued use of our services implies acceptance of updated terms.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Game Details Modal -->
+<div id="gameModal" class="modal">
+    <div class="modal-content game-modal-content">
+        <div class="game-modal-header">
+            <div>
+                <h2 id="gameModalTitle">Game Title</h2>
+            </div>
+            <span class="close-btn" onclick="closeModal('gameModal')">&times;</span>
+        </div>
+        <img id="gameModalImage" src="" alt="Game Banner" class="game-modal-image">
+        <div class="modal-body">
+            <div id="gameModalDescription"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2026 UltraAim Private Limited. All rights reserved.</p>
+        <p>Crafting digital experiences since 2025.</p>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.querySelector('nav');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        nav.classList.toggle('active');
+    });
+
+    // Close mobile menu when link is clicked
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            nav.classList.remove('active');
+        });
+    });
+
+    // Modal functions
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    // Game modal function
+    function openGameModal(title, imageUrl, description) {
+        document.getElementById('gameModalTitle').textContent = title;
+        document.getElementById('gameModalImage').src = imageUrl;
+        
+        const descriptionHtml = description
+            .split('\n')
+            .map(line => line.trim())
+            .filter(line => line)
+            .map(line => line.startsWith('-') ? `<li>${line.substring(1).trim()}</li>` : `<p>${line}</p>`)
+            .join('');
+        
+        document.getElementById('gameModalDescription').innerHTML = descriptionHtml;
+        openModal('gameModal');
+    }
+
+    // Close modal when clicking outside
+    window.addEventListener('click', (event) => {
+        const privacyModal = document.getElementById('privacyModal');
+        const termsModal = document.getElementById('termsModal');
+        const gameModal = document.getElementById('gameModal');
+
+        if (event.target === privacyModal) {
+            closeModal('privacyModal');
+        }
+        if (event.target === termsModal) {
+            closeModal('termsModal');
+        }
+        if (event.target === gameModal) {
+            closeModal('gameModal');
+        }
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            const privacyModal = document.getElementById('privacyModal');
+            const termsModal = document.getElementById('termsModal');
+            const gameModal = document.getElementById('gameModal');
+
+            if (privacyModal.style.display === 'block') closeModal('privacyModal');
+            if (termsModal.style.display === 'block') closeModal('termsModal');
+            if (gameModal.style.display === 'block') closeModal('gameModal');
+        }
+    });
+</script>
+
+</body>
+</html>
