@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Privacy Policy - UltraAim Private Limited</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/Ultra Aim Pvt Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(15, 15, 30, 0.95);
+            padding: 10px 0;
+            border-bottom: 2px solid #00c8ff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: auto;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #cecece;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 38px;
+            vertical-align: middle;
+        }
+
+        .logo-text .highlight {
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            color: #ff006e;
+            background: rgba(255, 0, 110, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Main Content */
+        main {
+            padding: 80px 0;
+            min-height: 100vh;
+        }
+
+        .policy-container {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 0, 110, 0.2);
+            border-radius: 10px;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #fff;
+            margin-bottom: 10px;
+            text-shadow: 0 0 30px rgba(255, 0, 110, 0.3);
+        }
+
+        .company-name {
+            font-size: 20px;
+            color: #00c8ff;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .last-updated {
+            color: #808080;
+            font-size: 14px;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 0, 110, 0.2);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #ff006e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        h2:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(90deg, #ff006e, #00c8ff);
+        }
+
+        h3 {
+            font-size: 18px;
+            color: #00c8ff;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            font-size: 16px;
+            color: #b0b0b0;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 15px;
+            color: #c0c0c0;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        ul {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            font-size: 15px;
+            color: #b0b0b0;
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        a {
+            color: #00c8ff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #ff006e;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(15, 15, 30, 0.98);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 0, 110, 0.3);
+            color: #666;
+            font-size: 14px;
+            margin-top: 80px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 15px;
+            font-size: 14px;
+        }
+
+        /* Back Button */
+        .back-button {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 10px 20px;
+            background: rgba(255, 0, 110, 0.2);
+            color: #00c8ff;
+            border: 1px solid #00c8ff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .back-button:hover {
+            background: rgba(0, 200, 255, 0.2);
+            color: #ff006e;
+            border-color: #ff006e;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            .policy-container {
+                padding: 30px 20px;
+            }
+
+            main {
+                padding: 40px 0;
+            }
+
+            p, li {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/Ultra Aim Pvt Logo V2.png" alt="UltraAim Logo">
+                <span class="logo-text"><span class="highlight">U</span>ltra<span class="highlight">A</span>im</span>
+            </a>
+            <nav>
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#games">Games</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <a href="index.html" class="back-button">← Back to Home</a>
+            <div class="policy-container">
+                <h1>Privacy Policy</h1>
+                <span class="company-name">UltraAim Private Limited</span>
+                <div class="last-updated"><strong>Last updated:</strong> 05 / 02 / 2026</div>
+
+    <p>
+        UltraAim Private Limited (“UltraAim”, “we”, “our”, “us”) operates mobile applications,
+        games, software products, and digital services (collectively referred to as the “Services”).
+    </p>
+
+    <p>
+        This Privacy Policy explains how we collect, use, disclose, and safeguard your information
+        when you use our Services.
+    </p>
+
+    <h3>1. Information We Collect</h3>
+
+    <h4>a) Personal Information</h4>
+    <p>
+        We may collect limited personal information when you voluntarily provide it, such as:
+    </p>
+    <ul>
+        <li>Name</li>
+        <li>Email address</li>
+        <li>Contact details (if you contact us)</li>
+    </ul>
+
+    <h4>b) Non-Personal Information</h4>
+    <p>
+        We may collect non-personal information automatically, including:
+    </p>
+    <ul>
+        <li>Device type</li>
+        <li>Operating system</li>
+        <li>App usage data</li>
+        <li>Crash reports</li>
+        <li>Performance data</li>
+    </ul>
+
+    <h3>2. How We Use Information</h3>
+    <p>
+        We use the collected information to:
+    </p>
+    <ul>
+        <li>Provide and improve our Services</li>
+        <li>Fix bugs and improve performance</li>
+        <li>Communicate with users when required</li>
+        <li>Ensure security and prevent misuse</li>
+        <li>Comply with legal obligations</li>
+    </ul>
+
+    <h3>3. Third-Party Services</h3>
+    <p>
+        Our Services may use third-party services that may collect information used to identify you.
+        These include but are not limited to:
+    </p>
+    <ul>
+        <li>Google Play Services</li>
+        <li>Google Analytics for Firebase</li>
+        <li>Ad services (if applicable in future)</li>
+    </ul>
+
+    <p>
+        These third parties have their own privacy policies governing their use of data.
+    </p>
+
+    <h3>4. Data Security</h3>
+    <p>
+        We take reasonable measures to protect your information. However, no method of transmission
+        over the internet or electronic storage is completely secure, and we cannot guarantee absolute
+        security.
+    </p>
+
+    <h3>5. Children’s Privacy</h3>
+    <p>
+        Our Services are not intended for children under the age of 13.
+        We do not knowingly collect personal information from children under 13.
+    </p>
+
+    <h3>6. Data Retention</h3>
+    <p>
+        We retain information only for as long as necessary to fulfill the purposes outlined in this
+        Privacy Policy, unless a longer retention period is required or permitted by law.
+    </p>
+
+    <h3>7. User Rights</h3>
+    <p>
+        Users may:
+    </p>
+    <ul>
+        <li>Request access to their data</li>
+        <li>Request correction or deletion of their data</li>
+        <li>Withdraw consent where applicable</li>
+    </ul>
+
+    <p>
+        Requests can be made by contacting us at the email below.
+    </p>
+
+    <h3>8. Changes to This Privacy Policy</h3>
+    <p>
+        We may update this Privacy Policy from time to time.
+        Any changes will be posted on this page with an updated revision date.
+    </p>
+
+                <h2>9. Contact Us</h2>
+                <p>
+                    <strong>UltraAim Private Limited</strong><br>
+                    23A, Motileda, Baramasiya,<br>
+                    Giridih, Jharkhand – 815302<br>
+                    Email: <a href="mailto:contact@ultraaim.in">contact@ultraaim.in</a><br>
+                    Website: <a href="https://www.ultraaim.in">https://www.ultraaim.in</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </div>
+            <p>&copy; 2026 UltraAim Private Limited. All rights reserved.</p>
+            <p>Crafting digital experiences since 2025.</p>
+        </div>
+    </footer>
+</body>
+</html>
