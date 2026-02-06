@@ -55,8 +55,8 @@
         .logo {
             font-size: 22px;
             font-weight: bold;
-            color: #cecece;
-            text-transform: uppercase;
+            color: #ffffff;
+            /* text-transform: uppercase; */
             letter-spacing: 2px;
             display: flex;
             align-items: center;
@@ -69,7 +69,7 @@
         }
 
         .logo-text .highlight {
-            color: #ffffff;
+            color: #00c8ff;
             font-weight: bold;
         }
 
@@ -221,7 +221,7 @@
         }
 
         .service-card h3 {
-            color: #ff006e;
+            color: #00c8ff;
             margin-bottom: 15px;
             font-size: 18px;
         }
@@ -469,7 +469,7 @@
             border-bottom: 2px solid #ff006e;
             padding-bottom: 15px;
         }
-        
+
         .modal-header h2 {
             margin: 0;
             color: #fff;
@@ -728,7 +728,7 @@
             <h2>Upcoming Games</h2>
             <div class="games-grid">
                 <!-- Game Card 1 -->
-                <div class="game-card">
+                <div class="game-card" data-game-id="1">
                     <img src="images/Game Banners/Soil to Sky Game Banner.jpg" alt="Soil to Sky">
                     <div class="game-card-content">
                         <h3>Soil to Skyline</h3>
@@ -738,13 +738,12 @@
                             a unique adventure combining puzzle-solving, exploration, and stunning environmental
                             storytelling.
                         </p>
-                        <a onclick="openGameModal('Soil to Skyline', 'images/Game Banners/Soil to Sky Game Banner.jpg', 'Embark on an epic journey from the depths of the earth to the heights of the sky. Experience a unique adventure combining puzzle-solving, exploration, and stunning environmental storytelling.\n\nThe game features:\n- Immersive puzzle mechanics\n- Beautiful environmental design\n- Engaging storyline\n- Multiple difficulty levels\n- Cross-platform support\n\nJoin us as we bring this unique experience to life!')"
-                            class="cta-btn">Learn More</a>
+                        <a href="#" class="cta-btn">Learn More</a>
                     </div>
                 </div>
 
                 <!-- Game Card 2 - Template for adding more games -->
-                <div class="game-card">
+                <div class="game-card" data-game-id="2">
                     <img src="images/Game Banners/Ludo Ultra 3D Game banner.png" alt="Game Coming Soon">
                     <div class="game-card-content">
                         <h3>Ludo Ultra 3D</h3>
@@ -753,13 +752,12 @@
                             Add your game description here. Describe the unique features, gameplay mechanics, and what
                             makes your game special.
                         </p>
-                        <a onclick="openGameModal('Ludo Ultra 3D', 'images/Game Banners/Ludo Ultra 3D Game Banner.png', 'Add your detailed game description here.\n\nFeatures:\n- Feature 1\n- Feature 2\n- Feature 3\n\nMore details coming soon!')"
-                            class="cta-btn">Learn More</a>
+                        <a href="#" class="cta-btn">Learn More</a>
                     </div>
                 </div>
 
                 <!-- Game Card 3 - Template for adding more games -->
-                <div class="game-card">
+                <div class="game-card" data-game-id="3">
                     <img src="images/Game Banners/Think Again Game banner.png" alt="Game Coming Soon">
                     <div class="game-card-content">
                         <h3>Think Again</h3>
@@ -768,8 +766,7 @@
                             Add your game description here. Describe the unique features, gameplay mechanics, and what
                             makes your game special.
                         </p>
-                        <a onclick="openGameModal('Think Again', 'images/Game Banners/Think Again Game banner.png', 'Add your detailed game description here.\n\nFeatures:\n- Feature 1\n- Feature 2\n- Feature 3\n\nMore details coming soon!')"
-                            class="cta-btn">Learn More</a>
+                        <a href="#" class="cta-btn">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -823,7 +820,7 @@
                         UltraAim Private Limited respects your privacy. Our applications collect limited data required
                         for functionality and improvement of user experience.
                     </p>
-                    <a href="privacy-policy.html"
+                    <a href="privacy-policy.html" target="_blank"
                         style="display: inline-block; background: linear-gradient(135deg, #ff006e, #d4006e); color: white; text-decoration: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; margin-top: 15px; transition: all 0.3s;">
                         Read Full Policy
                     </a>
@@ -834,87 +831,16 @@
                         By using our applications or services, you agree to comply with applicable laws and regulations.
                         UltraAim Private Limited reserves the right to update these terms.
                     </p>
-                    <button onclick="openModal('termsModal')"
-                        style="background: #ff006e; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top: 15px; transition: all 0.3s;">
+                    <a href="terms-conditions.html" target="_blank"
+                        style="display: inline-block; background: linear-gradient(135deg, #ff006e, #d4006e); color: white; text-decoration: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; margin-top: 15px; transition: all 0.3s;">
                         Read Full Terms
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Terms & Conditions Modal -->
-    <div id="termsModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Terms & Conditions</h2>
-                <span class="close-btn" onclick="closeModal('termsModal')">&times;</span>
-            </div>
-            <div class="modal-body">
-                <h3>1. Acceptance of Terms</h3>
-                <p>
-                    By using our applications, games, or services, you agree to comply with these terms and conditions.
-                    If you do not agree with any part of these terms, please discontinue use of our services.
-                </p>
 
-                <h3>2. User Responsibilities</h3>
-                <p>
-                    Users are responsible for maintaining the confidentiality of their account information and
-                    passwords. You agree to accept responsibility for all activities that occur under your account.
-                </p>
-
-                <h3>3. Intellectual Property Rights</h3>
-                <p>
-                    All content, including game assets, code, graphics, and text, are the intellectual property of
-                    UltraAim Private Limited. Unauthorized reproduction or distribution is prohibited.
-                </p>
-
-                <h3>4. Limitations of Liability</h3>
-                <p>
-                    UltraAim Private Limited is provided "as is" without warranties. We are not liable for any indirect,
-                    incidental, or consequential damages arising from the use of our services.
-                </p>
-
-                <h3>5. User Conduct</h3>
-                <p>
-                    Users agree not to:
-                    <br>• Engage in illegal activities
-                    <br>• Harass or threaten other users
-                    <br>• Attempt to reverse engineer our applications
-                    <br>• Violate any applicable laws or regulations
-                </p>
-
-                <h3>6. Termination</h3>
-                <p>
-                    UltraAim Private Limited reserves the right to terminate user accounts or access to services for
-                    violations of these terms or illegal activities.
-                </p>
-
-                <h3>7. Modification of Services</h3>
-                <p>
-                    We reserve the right to modify or discontinue our services at any time with or without notice. We
-                    are not liable for any loss of data or functionality resulting from service modifications.
-                </p>
-
-                <h3>8. Dispute Resolution</h3>
-                <p>
-                    Any disputes arising from these terms shall be governed by the laws of India. Both parties agree to
-                    resolve disputes through mutual negotiation.
-                </p>
-
-                <h3>9. Contact Information</h3>
-                <p>
-                    For inquiries regarding these terms: <strong>contact@ultraaim.in</strong>
-                </p>
-
-                <h3>10. Policy Updates</h3>
-                <p>
-                    UltraAim Private Limited reserves the right to update these terms at any time without prior notice.
-                    Continued use of our services implies acceptance of updated terms.
-                </p>
-            </div>
-        </div>
-    </div>
 
     <!-- Game Details Modal -->
     <div id="gameModal" class="modal">
@@ -941,7 +867,59 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
+        // ========================================
+        // GAMES DATA STRUCTURE
+        // ========================================
+        // Add your games here in a clear structure.
+        // No need to write long strings in onclick handlers!
+        const games = {
+            1: {
+                title: 'Soil to Skyline',
+                image: 'images/Game Banners/Soil to Sky Game Banner.jpg',
+                description: `Embark on an epic journey from the depths of the earth to the heights of the sky. Experience a unique adventure combining puzzle-solving, exploration, and stunning environmental storytelling.
+
+The game features:
+- Immersive puzzle mechanics
+- Beautiful environmental design
+- Engaging storyline
+- Multiple difficulty levels
+- Cross-platform support
+
+Join us as we bring this unique experience to life!`
+            },
+            2: {
+                title: 'Ludo Ultra 3D',
+                image: 'images/Game Banners/Ludo Ultra 3D Game banner.png',
+                description: `Experience the classic board game reimagined in stunning 3D!
+
+Features:
+- Multiplayer gameplay
+- Online and offline modes
+- Beautiful 3D graphics
+- Customizable avatars
+- Leaderboards
+
+Play now and challenge your friends!`
+            },
+            3: {
+                title: 'Think Again',
+                image: 'images/Game Banners/Think Again Game banner.png',
+                description: `Challenge your mind with engaging brain puzzles and strategic challenges.
+
+Features:
+- Brain-training puzzles
+- Multiple difficulty levels
+- Daily challenges
+- Global leaderboards
+- Progress tracking
+
+Train your mind and compete globally!`
+            }
+        };
+
+        // ========================================
+        // MOBILE MENU TOGGLE
+        // ========================================
         const hamburger = document.getElementById('hamburger');
         const nav = document.querySelector('nav');
 
@@ -958,7 +936,9 @@
             });
         });
 
-        // Modal functions
+        // ========================================
+        // MODAL FUNCTIONS
+        // ========================================
         function openModal(modalId) {
             const modal = document.getElementById(modalId);
             modal.style.display = 'block';
@@ -975,12 +955,22 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Game modal function
-        function openGameModal(title, imageUrl, description) {
-            document.getElementById('gameModalTitle').textContent = title;
-            document.getElementById('gameModalImage').src = imageUrl;
+        // ========================================
+        // GAME MODAL FUNCTIONS
+        // ========================================
+        // New improved function that accepts game ID
+        function openGameModalById(gameId) {
+            const game = games[gameId];
+            if (!game) {
+                console.error(`Game with ID ${gameId} not found`);
+                return;
+            }
 
-            const descriptionHtml = description
+            document.getElementById('gameModalTitle').textContent = game.title;
+            document.getElementById('gameModalImage').src = game.image;
+
+            // Convert description text to formatted HTML
+            const descriptionHtml = game.description
                 .split('\n')
                 .map(line => line.trim())
                 .filter(line => line)
@@ -991,26 +981,38 @@
             openModal('gameModal');
         }
 
-        // Close modal when clicking outside
+        // ========================================
+        // MAKE GAME CARDS CLICKABLE
+        // ========================================
+        document.querySelectorAll('.game-card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                e.preventDefault();
+                const gameId = card.getAttribute('data-game-id');
+                openGameModalById(gameId);
+            });
+
+            // Add cursor pointer to indicate clickability
+            card.style.cursor = 'pointer';
+        });
+
+        // ========================================
+        // CLOSE MODAL ON OUTSIDE CLICK
+        // ========================================
         window.addEventListener('click', (event) => {
-            const termsModal = document.getElementById('termsModal');
             const gameModal = document.getElementById('gameModal');
 
-            if (event.target === termsModal) {
-                closeModal('termsModal');
-            }
             if (event.target === gameModal) {
                 closeModal('gameModal');
             }
         });
 
-        // Close modal on Escape key
+        // ========================================
+        // CLOSE MODAL ON ESCAPE KEY
+        // ========================================
         document.addEventListener('keydown', (event) => {
             if (event.key === 'Escape') {
-                const termsModal = document.getElementById('termsModal');
                 const gameModal = document.getElementById('gameModal');
 
-                if (termsModal.style.display === 'block') closeModal('termsModal');
                 if (gameModal.style.display === 'block') closeModal('gameModal');
             }
         });
