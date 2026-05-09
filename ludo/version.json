@@ -2,12 +2,12 @@
   "latestVersion": "0.0.1",
   "versions": [
     {
-      "version": "0.0.1",
-      "title": "Initial Test Release",
-      "description": "This is the initial test release of Ludo Ultra 3D.\nVersion 0.0.1",
+      "version": "0.0.2",
+      "title": "New release on play store",
+      "description": "dummy des",
       "isHardUpdate": true,
       "releaseDate": "2026-02-05",
-      "updateLink": "https://www.ultraaim.in/"
+      "updateLink": "https://playstore.com/"
     }
   ]
 }
