@@ -2,10 +2,10 @@
   "latestVersion": "0.0.1",
   "versions": [
     {
-      "version": "0.0.2",
+      "version": "0.0.1",
       "title": "New release on play store",
       "description": "dummy des",
-      "isHardUpdate": true,
+      "isHardUpdate": false,
       "releaseDate": "2026-02-05",
       "updateLink": "https://playstore.com/"
     }
