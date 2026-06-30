@@ -9,6 +9,7 @@
     <meta name="description" content="UltraAim is an independent game and app development studio based in India.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 
     <!-- Open Graphs Tags -->
     <meta property="og:title" content="UltraAim Private Limited" />
@@ -20,614 +21,8 @@
     <!-- Theme Color -->
     <meta name="theme-color-red" content="#ff006e">
     <meta name="theme-color-blue" content="#00c8ff">
-
-    <!-- Stylesheet -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
-            color: #e0e0e0;
-            line-height: 1.8;
-        }
-
-        /* Header & Navigation */
-        header {
-            background: rgba(15, 15, 30, 0.95);
-            padding: 10px 0;
-            border-bottom: 2px solid #00c8ff;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: auto;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ffffff;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo img {
-            height: 38px;
-            vertical-align: middle;
-        }
-
-        .logo-text .highlight {
-            color: #00c8ff;
-            font-weight: 800;
-            font-size: 26px;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 0;
-        }
-
-        nav a {
-            color: #e0e0e0;
-            text-decoration: none;
-            padding: 10px 20px;
-            font-weight: 500;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-
-        nav a:hover {
-            color: #ff006e;
-            background: rgba(255, 0, 110, 0.1);
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: #00c8ff;
-            border-radius: 3px;
-            transition: all 0.3s;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 100px 0;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(255, 0, 110, 0.1) 0%, rgba(0, 200, 255, 0.1) 100%);
-        }
-
-        .hero h1 {
-            font-size: 52px;
-            margin-bottom: 20px;
-            color: #fff;
-            text-shadow: 0 0 30px rgba(255, 0, 110, 0.3);
-        }
-
-        .hero .subtitle {
-            font-size: 20px;
-            color: #00c8ff;
-            margin-bottom: 30px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            color: #b0b0b0;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Section Styling */
-        section {
-            padding: 80px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        section:last-of-type {
-            border-bottom: none;
-        }
-
-        h2 {
-            font-size: 40px;
-            margin-bottom: 40px;
-            color: #fff;
-            text-align: center;
-            position: relative;
-            padding-bottom: 20px;
-        }
-
-        h2:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, #ff006e, #00c8ff);
-            margin: 20px auto 0;
-        }
-
-        /* About Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-            margin-bottom: 40px;
-        }
-
-        .about-content p {
-            margin-bottom: 15px;
-            font-size: 16px;
-            color: #c0c0c0;
-        }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .service-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 25px;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 0, 110, 0.3);
-            transition: all 0.3s;
-            text-align: center;
-        }
-
-        .service-card:hover {
-            background: rgba(255, 0, 110, 0.1);
-            border-color: #ff006e;
-            transform: translateY(-5px);
-        }
-
-        .service-card h3 {
-            color: #00c8ff;
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
-
-        .service-card p {
-            color: #a0a0a0;
-            font-size: 14px;
-        }
-
-        /* Games Section */
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-        }
-
-        .game-card {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 15px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 0, 110, 0.2);
-            transition: all 0.4s;
-            cursor: pointer;
-        }
-
-        .game-card:hover {
-            transform: translateY(-10px);
-            border-color: #ff006e;
-            box-shadow: 0 20px 40px rgba(255, 0, 110, 0.2);
-        }
-
-        .game-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .game-card-content {
-            padding: 25px;
-        }
-
-        .game-card h3 {
-            color: #00c8ff;
-            margin-bottom: 10px;
-            font-size: 20px;
-        }
-
-        .game-card .status {
-            display: inline-block;
-            background: rgba(255, 0, 110, 0.3);
-            color: #ff006e;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .game-card p {
-            color: #a0a0a0;
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .game-card .cta-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #ff006e, #d4006e);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-            font-size: 14px;
-        }
-
-        .game-card .cta-btn:hover {
-            background: linear-gradient(135deg, #d4006e, #a80052);
-            transform: scale(1.05);
-        }
-
-        /* Contact Section */
-        .contact-info {
-            background: rgba(255, 0, 110, 0.08);
-            padding: 40px;
-            border-radius: 10px;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .contact-info p {
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-
-        .contact-info a {
-            color: #00c8ff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .contact-info a:hover {
-            color: #ff006e;
-        }
-
-        /* Social Media Icons */
-        .social-links {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .social-links a {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #ff006e, #d4006e);
-            color: #fff;
-            border-radius: 50%;
-            font-size: 20px;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-
-        .social-links a:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 10px 25px rgba(255, 0, 110, 0.3);
-            color: #fff;
-        }
-
-        /* Info Section */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .info-box {
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.02);
-            border-left: 4px solid #ff006e;
-            border-radius: 5px;
-        }
-
-        .info-box h3 {
-            color: #ff006e;
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
-
-        .info-box p {
-            color: #a0a0a0;
-            font-size: 14px;
-            line-height: 1.8;
-        }
-
-        /* Footer */
-        footer {
-            background: rgba(15, 15, 30, 0.98);
-            padding: 40px 0;
-            text-align: center;
-            border-top: 1px solid rgba(255, 0, 110, 0.3);
-            color: #666;
-            font-size: 14px;
-        }
-
-        footer p {
-            margin-bottom: 10px;
-        }
-
-        /* Modal Popup Styling */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            animation: fadeIn 0.3s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeOut {
-            from {
-                opacity: 1;
-            }
-
-            to {
-                opacity: 0;
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .modal-content {
-            background: #1a1a2e;
-            margin: auto;
-            padding: 30px;
-            border: 1px solid #ff006e;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 700px;
-            max-height: 80vh;
-            overflow-y: auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            /* animation: slideIn 0.3s ease-out; */
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #ff006e;
-            padding-bottom: 15px;
-        }
-
-        .modal-header h2 {
-            margin: 0;
-            color: #fff;
-            font-size: 28px;
-        }
-
-        .close-btn {
-            color: #ff006e;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .close-btn:hover {
-            color: #d4006e;
-        }
-
-        .modal-body {
-            color: #c0c0c0;
-            line-height: 1.8;
-        }
-
-        .modal-body h3 {
-            color: #00c8ff;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        .modal-body p {
-            margin-bottom: 15px;
-            font-size: 15px;
-        }
-
-        /* Game Modal */
-        .game-modal-content {
-            max-width: 800px;
-        }
-
-        .game-modal-image {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        .game-modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 20px;
-        }
-
-        .game-modal-header h2 {
-            margin: 0;
-            color: #fff;
-        }
-
-        /* Hero Logo */
-        .hero-logo {
-            max-width: 200px;
-            height: auto;
-            margin-bottom: 30px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            animation: fadeInDown 0.8s ease-out;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero .subtitle {
-                font-size: 16px;
-            }
-
-            h2 {
-                font-size: 28px;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            header .container {
-                flex-direction: row;
-                gap: 0;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            nav {
-                display: none;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                right: 0;
-                flex-direction: column;
-                background: rgba(15, 15, 30, 0.98);
-                border-bottom: 2px solid #00c8ff;
-                border-top: 2px solid #00c8ff;
-            }
-
-            nav.active {
-                display: flex;
-            }
-
-            nav a {
-                padding: 15px 20px;
-                margin-left: 0;
-                border-bottom: 1px solid rgba(255, 0, 110, 0.2);
-            }
-
-            .games-grid {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 50px 0;
-            }
-
-            .modal-content {
-                width: 95%;
-                max-height: 90vh;
-                padding: 20px;
-            }
-
-            .modal-header {
-                flex-direction: column;
-                gap: 10px;
-                align-items: flex-start;
-            }
-
-            .close-btn {
-                align-self: flex-end;
-            }
-        }
-    </style>
 </head>
+
 
 <body>
 
@@ -636,7 +31,10 @@
         <div class="container">
             <div class="logo">
                 <img src="images/Ultra Aim Pvt Logo V2.png" alt="UltraAim Logo">
-                <span class="logo-text"><span class="highlight">U</span>ltra<span class="highlight">A</span>im</span>
+                <span class="logo-text">
+                    <span class="highlight">U</span>ltra<span class="highlight">A</span>im
+                    <span class="highlight">S</span>tudio
+                </span>
             </div>
             <nav>
                 <a href="#about">About</a>
@@ -656,7 +54,8 @@
     <section class="hero">
         <div class="container">
             <img src="images/Ultra Aim Pvt Logo V3.png" alt="UltraAim Logo" class="hero-logo">
-            <h1>UltraAim Private Limited</h1>
+            <h1>UltraAim Studio</h1>
+            <h4>Private Limited</h4>
             <p class="subtitle">Crafting Engaging Digital Experiences</p>
             <p>An independent game and software development studio creating innovative solutions for a global audience.
                 Based in India, delivering world-class products.</p>
@@ -746,13 +145,16 @@
 
                 <!-- Game Card 2 - Template for adding more games -->
                 <div class="game-card" data-game-id="2">
-                    <img src="images/Game Banners/Ludo Ultra 3D Game banner.png" alt="Game Coming Soon">
+                    <img src="images/Game Banners/Ludo Ultra/Ludo Ultra 3D Game banner 1.png" alt="Game Coming Soon">
                     <div class="game-card-content">
                         <h3>Ludo Ultra 3D</h3>
                         <span class="status">In Development</span>
                         <p>
-                            Add your game description here. Describe the unique features, gameplay mechanics, and what
-                            makes your game special.
+                            Ludo Ultra 3D is a digital board game project aimed at recreating the classic Ludo
+                            experience in a modern and visually engaging 3D environment. The goal of the project is to
+                            combine the familiar gameplay of traditional Ludo with enhanced visuals, interactive
+                            animations, and multiple gameplay modes to provide a more immersive and enjoyable experience
+                            for players.
                         </p>
                         <a href="#" class="cta-btn">Learn More</a>
                     </div>
@@ -765,8 +167,9 @@
                         <h3>Think Again</h3>
                         <span class="status">In Development</span>
                         <p>
-                            Add your game description here. Describe the unique features, gameplay mechanics, and what
-                            makes your game special.
+                            Think Again is a fun and engaging mobile puzzle game designed to challenge players' logic,
+                            creativity, and attention to detail. Inspired by popular brain teaser games, the gameplay
+                            focuses on unexpected solutions that require players to think beyond the obvious.
                         </p>
                         <a href="#" class="cta-btn">Learn More</a>
                     </div>
@@ -846,16 +249,34 @@
 
     <!-- Game Details Modal -->
     <div id="gameModal" class="modal">
-        <div class="modal-content gameModalDescription">
-            <div class="game-modal-header">
-                <div>
-                    <h2 id="gameModalTitle">Game Title</h2>
-                </div>
-                <span class="close-btn" onclick="closeModal('gameModal')">&times;</span>
+        <div class="modal-content">
+            <!-- Close Button -->
+            <span class="modal-close-btn" onclick="closeModal('gameModal')">&times;</span>
+
+            <!-- Image Slider -->
+            <div class="game-slider" id="gameSlider">
+                <div class="slider-track" id="sliderTrack"></div>
+                <div class="slider-gradient"></div>
+                <button class="slider-btn slider-prev" id="sliderPrev">&#8249;</button>
+                <button class="slider-btn slider-next" id="sliderNext">&#8250;</button>
+                <div class="slider-dots" id="sliderDots"></div>
             </div>
-            <img id="gameModalImage" src="" alt="Game Banner" class="game-modal-image">
-            <div class="modal-body">
-                <div id="gameModalDescription"></div>
+
+            <!-- Game Info Body -->
+            <div class="game-modal-body">
+                <h2 class="game-modal-title" id="gameModalTitle">Game Title</h2>
+                <div class="game-meta" id="gameModalMeta"></div>
+                <p class="game-tagline" id="gameModalTagline"></p>
+
+                <div class="game-description-section">
+                    <h3 class="section-label">About the Game</h3>
+                    <p id="gameModalDescription" class="game-description-text"></p>
+                </div>
+
+                <div class="game-features-section" id="gameFeaturesSection">
+                    <h3 class="section-label">Key Features</h3>
+                    <div class="features-grid" id="gameModalFeatures"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -872,50 +293,177 @@
         // ========================================
         // GAMES DATA STRUCTURE
         // ========================================
-        // Add your games here in a clear structure.
-        // No need to write long strings in onclick handlers!
         const games = {
             1: {
                 title: 'Soil to Skyline',
-                image: 'images/Game Banners/Soil to Sky Game Banner.jpg',
-                description: `Embark on an epic journey from the depths of the earth to the heights of the sky. Experience a unique adventure combining puzzle-solving, exploration, and stunning environmental storytelling.
-
-The game features:
-- Immersive puzzle mechanics
-- Beautiful environmental design
-- Engaging storyline
-- Multiple difficulty levels
-- Cross-platform support
-
-Join us as we bring this unique experience to life!`
+                status: 'Coming Soon',
+                statusBadge: 'badge-coming-soon',
+                genre: 'Adventure / Puzzle',
+                platform: '📱 Mobile',
+                tagline: 'From the depths of the earth to the heights of the sky — a journey unlike any other.',
+                images: [
+                    'images/Game Banners/Soil to Sky Game Banner.jpg'
+                ],
+                description: 'Embark on an epic journey from the depths of the earth to the heights of the sky. Experience a unique adventure that weaves together puzzle-solving, environmental exploration, and stunning visual storytelling. Every layer of the world hides secrets waiting to be uncovered.',
+                features: [
+                    { icon: '🧩', title: 'Immersive Puzzles', desc: 'Layered mechanics that grow naturally in complexity' },
+                    { icon: '🌍', title: 'Rich Environments', desc: 'Beautifully crafted worlds with environmental storytelling' },
+                    { icon: '📖', title: 'Engaging Storyline', desc: 'A narrative that unfolds as you ascend through the world' },
+                    { icon: '⚙️', title: 'Multiple Difficulty Levels', desc: 'Accessible for newcomers, challenging for veterans' },
+                ]
             },
             2: {
                 title: 'Ludo Ultra 3D',
-                image: 'images/Game Banners/Ludo Ultra 3D Game banner.png',
-                description: `Experience the classic board game reimagined in stunning 3D!
+                status: 'In Development',
+                statusBadge: 'badge-in-dev',
+                genre: 'Board Game / Strategy',
+                platform: '📱 Mobile',
+                tagline: 'A modern 3D take on the timeless Ludo board game.',
+                images: [
+                    'images/Game Banners/Ludo Ultra/Ludo Ultra 3D Game banner 1.png',
+                    'images/Game Banners/Ludo Ultra/Ludo Ultra 3D Game banner 2.png',
+                ],
+                description: `
+        <p><strong>Ludo Ultra 3D</strong> is a modern digital adaptation of the classic Ludo board game, designed to deliver the familiar gameplay experience in a visually rich and immersive 3D environment. The project focuses on combining the timeless simplicity of traditional Ludo with stylized visuals, smooth gameplay, and engaging player interactions.</p>
 
-Features:
-- Multiplayer gameplay
-- Online and offline modes
-- Beautiful 3D graphics
-- Customizable avatars
-- Leaderboards
+        <p>The game introduces beautifully crafted <strong>3D boards and themed environments</strong> that transform the classic board into a lively miniature world. From relaxing natural settings to vibrant themed arenas, each match takes place in a visually appealing environment that enhances the overall gameplay experience while maintaining clear and readable board mechanics.</p>
 
-Play now and challenge your friends!`
+        <p><strong>Ludo Ultra 3D</strong> is designed to support different styles of play, allowing players to enjoy the game in multiple ways:</p>
+
+        <ul>
+            <li>Compete in <strong>online multiplayer matches</strong> with players from different locations.</li>
+            <li>Create private rooms and <strong>play with friends</strong> anytime.</li>
+            <li>Strategically cooperate in <strong>Team-Up Mode</strong> with a partner.</li>
+            <li>Challenge <strong>AI-controlled bots</strong> for offline practice and casual play.</li>
+            <li>Use <strong>Pass & Play</strong> mode to enjoy local multiplayer on the same device.</li>
+        </ul>
+
+        <p>To encourage continued play, the game features a <strong>player progression system</strong> where users earn Experience Points (EXP) from matches. As players accumulate EXP, they level up their profile and track their progress over time, adding a sense of achievement and long-term engagement.</p>
+
+        <p>The overall design philosophy behind the project focuses on delivering:</p>
+
+        <ul>
+            <li>Visually appealing <strong>stylized 3D environments</strong></li>
+            <li>Clean and intuitive <strong>user interface</strong></li>
+            <li>Smooth and responsive <strong>gameplay mechanics</strong></li>
+            <li>Engaging animations and expressive token actions</li>
+            <li>Multiple gameplay modes for both <strong>online and offline</strong> experiences</li>
+        </ul>
+
+        <p>By blending traditional board game mechanics with modern visual design and multiplayer functionality, <strong>Ludo Ultra 3D</strong> aims to provide a polished and enjoyable experience for players who want to enjoy the classic Ludo game in a fresh and interactive way.</p>
+    `,
+                features: [
+                    { icon: '🌐', title: 'Online Multiplayer', desc: 'Compete with players from around the world in real-time matches' },
+                    { icon: '👥', title: 'Play with Friends', desc: 'Create private rooms and enjoy matches with your friends' },
+                    { icon: '🤝', title: 'Team-Up Mode', desc: 'Team up with another player and play strategically as partners' },
+                    { icon: '🤖', title: 'AI Opponents', desc: 'Play against computer-controlled bots anytime, even offline' },
+                    { icon: '📱', title: 'Pass & Play', desc: 'Play locally with multiple players on the same device' },
+                    { icon: '🎭', title: 'Animated Token Actions', desc: 'Expressive token animations and fun reactions during gameplay moments' },
+                    { icon: '⬆️', title: 'Player Progression', desc: 'Earn EXP, level up your profile, and track your progress over time' },
+                    { icon: '🌍', title: 'Themed 3D Environments', desc: 'Play on beautifully crafted boards with unique environments and atmospheres' }
+                ]
             },
             3: {
                 title: 'Think Again',
-                image: 'images/Game Banners/Think Again Game banner.png',
-                description: `Challenge your mind with engaging brain puzzles and strategic challenges.
+                status: 'In Development',
+                statusBadge: 'badge-in-dev',
+                genre: 'Puzzle / Brain Teaser',
+                platform: '📱 Mobile',
+                tagline: 'Think you know the answer? You might want to Think Again.',
 
-Features:
-- Brain-training puzzles
-- Multiple difficulty levels
-- Daily challenges
-- Global leaderboards
-- Progress tracking
+                images: [
+                    'images/Game Banners/Think Again Game banner.png'
+                ],
 
-Train your mind and compete globally!`
+                description: ` <p>
+                <strong>Think Again</strong> is a clever and engaging mobile puzzle game designed to test 
+                players' logic, creativity, and attention to detail. Inspired by popular brain teaser 
+                games, the experience focuses on puzzles that appear simple at first glance but hide 
+                surprising solutions that require players to think differently.
+            </p>
+
+            <p>
+                Each level presents a unique situation where the most obvious answer is often 
+                the wrong one. Players must carefully observe the environment, interact with 
+                objects, and experiment with different actions to uncover the correct solution. 
+                Whether it’s turning on a fan, fixing a broken object, or solving a tricky 
+                equation, the key to success is learning to <em>think beyond the obvious</em>.
+            </p>
+
+            <h4>🧩 Gameplay Concept</h4>
+            <p>
+                Every puzzle in <strong>Think Again</strong> is built around the idea that players 
+                should question their first instinct. Instead of straightforward answers, the game 
+                encourages creative thinking and playful experimentation.
+            </p>
+
+            <ul>
+                <li>Tap, drag, or combine objects to discover hidden interactions.</li>
+                <li>Analyze the scene carefully for visual clues.</li>
+                <li>Try unexpected solutions to complete each level.</li>
+                <li>Think differently — sometimes the solution is right in front of you.</li>
+            </ul>
+
+            <h4>🎮 Player Experience</h4>
+            <p>
+                The game is designed to be easy to understand but challenging to master. 
+                Early levels introduce players to the puzzle mechanics, while later stages 
+                become increasingly creative and mind-bending. This progressive difficulty 
+                keeps players engaged and constantly surprised by the solutions.
+            </p>
+
+            <h4>🎨 Visual Style</h4>
+            <p>
+                <strong>Think Again</strong> uses a colorful flat 2D cartoon art style that keeps 
+                the visuals clean, playful, and easy to read. Objects are designed with clear 
+                shapes and bright colors so players can quickly identify interactive elements 
+                without visual clutter.
+            </p>
+
+            <p>
+                The simple and friendly design makes the game enjoyable for a wide audience, 
+                including kids and casual players who love brain teasers.
+            </p>
+
+            <h4>🎯 Goal of the Game</h4>
+            <p>
+                The main goal of <strong>Think Again</strong> is to challenge players to slow down, 
+                observe carefully, and approach problems from a new perspective. Every puzzle 
+                reinforces a simple idea:
+            </p>
+
+            <blockquote>
+                The first answer is not always the correct one.
+            </blockquote>
+    `,
+
+                features: [
+                    {
+                        icon: '🧠',
+                        title: 'Creative Brain Teasers',
+                        desc: 'Unexpected puzzles designed to challenge logic and make players rethink the obvious answer.'
+                    },
+                    {
+                        icon: '👆',
+                        title: 'Interactive Gameplay',
+                        desc: 'Tap, drag, combine, and interact with objects in creative ways to reveal hidden solutions.'
+                    },
+                    {
+                        icon: '🎨',
+                        title: 'Kid-Friendly Visual Style',
+                        desc: 'Clean and colorful flat 2D cartoon graphics designed to be clear, playful, and easy to understand.'
+                    },
+                    {
+                        icon: '📈',
+                        title: 'Progressive Challenge',
+                        desc: 'Levels begin simple and gradually introduce more complex and surprising puzzle mechanics.'
+                    },
+                    {
+                        icon: '⚡',
+                        title: 'Lightweight & Smooth',
+                        desc: 'Optimized for mobile devices, ensuring fast loading and smooth gameplay performance.'
+                    }
+                ]
             }
         };
 
@@ -958,9 +506,59 @@ Train your mind and compete globally!`
         }
 
         // ========================================
+        // SLIDER STATE
+        // ========================================
+        let sliderCurrentIndex = 0;
+        let sliderImages = [];
+
+        function initSlider(images) {
+            sliderImages = images;
+            sliderCurrentIndex = 0;
+
+            const track = document.getElementById('sliderTrack');
+            const dots = document.getElementById('sliderDots');
+            const prevBtn = document.getElementById('sliderPrev');
+            const nextBtn = document.getElementById('sliderNext');
+
+            // Build slides
+            track.innerHTML = images.map(src =>
+                `<div class="slider-slide"><img src="${src}" alt="Game Screenshot" loading="lazy"></div>`
+            ).join('');
+
+            // Build dots
+            dots.innerHTML = images.map((_, i) =>
+                `<button class="slider-dot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${i})"></button>`
+            ).join('');
+
+            // Show/hide nav controls
+            const showNav = images.length > 1;
+            prevBtn.style.display = showNav ? 'flex' : 'none';
+            nextBtn.style.display = showNav ? 'flex' : 'none';
+            dots.style.display = showNav ? 'flex' : 'none';
+
+            updateSlider();
+        }
+
+        function updateSlider() {
+            const track = document.getElementById('sliderTrack');
+            track.style.transform = `translateX(-${sliderCurrentIndex * 100}%)`;
+
+            document.querySelectorAll('.slider-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === sliderCurrentIndex);
+            });
+        }
+
+        function goToSlide(index) {
+            sliderCurrentIndex = (index + sliderImages.length) % sliderImages.length;
+            updateSlider();
+        }
+
+        document.getElementById('sliderPrev').addEventListener('click', () => goToSlide(sliderCurrentIndex - 1));
+        document.getElementById('sliderNext').addEventListener('click', () => goToSlide(sliderCurrentIndex + 1));
+
+        // ========================================
         // GAME MODAL FUNCTIONS
         // ========================================
-        // New improved function that accepts game ID
         function openGameModalById(gameId) {
             const game = games[gameId];
             if (!game) {
@@ -968,18 +566,35 @@ Train your mind and compete globally!`
                 return;
             }
 
+            // Title
             document.getElementById('gameModalTitle').textContent = game.title;
-            document.getElementById('gameModalImage').src = game.image;
 
-            // Convert description text to formatted HTML
-            const descriptionHtml = game.description
-                .split('\n')
-                .map(line => line.trim())
-                .filter(line => line)
-                .map(line => line.startsWith('-') ? `<li>${line.substring(1).trim()}</li>` : `<p>${line}</p>`)
-                .join('');
+            // Meta badges
+            document.getElementById('gameModalMeta').innerHTML = `
+                <span class="badge ${game.statusBadge}">${game.status}</span>
+                <span class="badge badge-genre">${game.genre}</span>
+                <span class="badge badge-platform">${game.platform}</span>
+            `;
 
-            document.getElementById('gameModalDescription').innerHTML = descriptionHtml;
+            // Tagline
+            document.getElementById('gameModalTagline').textContent = game.tagline;
+
+            // Description
+            document.getElementById('gameModalDescription').innerHTML = game.description;
+
+            // Features
+            const featuresHtml = game.features.map(f => `
+                <div class="feature-card">
+                    <span class="feature-icon">${f.icon}</span>
+                    <div class="feature-title">${f.title}</div>
+                    <div class="feature-desc">${f.desc}</div>
+                </div>
+            `).join('');
+            document.getElementById('gameModalFeatures').innerHTML = featuresHtml;
+
+            // Slider
+            initSlider(game.images);
+
             openModal('gameModal');
         }
 
